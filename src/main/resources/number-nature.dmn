@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_0hfbox2" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="number-nature" name="Decision 1">
+    <decisionTable id="DecisionTable_1b3okj7">
+      <input id="Input_1" label="user input" biodi:width="192" camunda:inputVariable="input1">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="nature" name="nature" typeRef="string" />
+      <rule id="DecisionRule_0ri0h24">
+        <inputEntry id="UnaryTests_1km84xe">
+          <text>0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04dgmui">
+          <text>"zero"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10d2yox">
+        <inputEntry id="UnaryTests_1mhcoug">
+          <text>&gt; 0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gxcx6s">
+          <text>"positive"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m1nax4">
+        <inputEntry id="UnaryTests_1ff7lmw">
+          <text>&lt; 0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d47jni">
+          <text>"negative"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="number-nature">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_17j3joo" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="dish" name="Dish">
+    <decisionTable id="DecisionTable_0ad2jul" hitPolicy="COLLECT">
+      <input id="Input_1" label="Season" camunda:inputVariable="season">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1qd5qtm">
+          <text>"Fall","Winter","Spring","Summer"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_16diilr" label="How many guests?" camunda:inputVariable="guestCount">
+        <inputExpression id="LiteralExpression_0u431mb" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Dish" name="dishName" typeRef="string" />
+      <output id="OutputClause_0nou62k" label="Drink" name="drinkName" typeRef="string" />
+      <rule id="DecisionRule_1rlsd8y">
+        <inputEntry id="UnaryTests_0slzayp">
+          <text>"Fall"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16k9m2b">
+          <text>&lt;=8</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_093dece">
+          <text>"Veggie Soup"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w05ygp">
+          <text>"Lemonade"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1is7l1v">
+        <inputEntry id="UnaryTests_1s5fjg6">
+          <text>"Winter"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0myi60z">
+          <text>&lt;=8</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a6phx7">
+          <text>"Basil pesto pasta"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0iqov9n">
+          <text>"Porto Wine"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wvqaih">
+        <inputEntry id="UnaryTests_1iai6zs">
+          <text>"Spring"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09q7di6">
+          <text>&lt;=4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18816ht">
+          <text>"Maggie Noodles"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ff10hk">
+          <text>"Diet Soda"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pj02jj">
+        <description>Quick meal</description>
+        <inputEntry id="UnaryTests_0b2kg88">
+          <text>"Summer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yctus4">
+          <text>[5..8]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1e8vwy7">
+          <text> "Veggie Burger and Fries"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mzqh3n">
+          <text>"Lemon Soda"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d3t4qq">
+        <description>Easy to make for lots of people</description>
+        <inputEntry id="UnaryTests_1v10y8q">
+          <text>"Fall","Winter","Spring"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wnlrzo">
+          <text>&gt;8</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0g5mdgv">
+          <text>"Idli Sambar"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zr2bq2">
+          <text>"Tea/Coffee"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ouxg5b">
+        <description>Order out</description>
+        <inputEntry id="UnaryTests_1k13jq4">
+          <text>"Summer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sns5mk">
+          <text>&gt;8</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0my92bg">
+          <text>"Achari gobi Pizza"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fno2kk">
+          <text>"Diet Soda"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="dish">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

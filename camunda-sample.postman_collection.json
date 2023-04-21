@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "08b12b61-58de-4c77-87a8-26994a772b38",
+		"name": "camunda-sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18408404"
+	},
+	"item": [
+		{
+			"name": "decision-definition",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\" : {\r\n        \"input1\" : { \"value\" : 0, \"type\" : \"integer\" }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/decision-definition/key/number-nature/evaluate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"decision-definition",
+						"key",
+						"number-nature",
+						"evaluate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "name-change-request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\" : {\r\n        \"name\" : { \"value\" : \"Jen\", \"type\" : \"string\" },\r\n        \"newname\" : { \"value\" : \"Phoebe\", \"type\" : \"string\" }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/process-definition/key/name-change-request/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"process-definition",
+						"key",
+						"name-change-request",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dish-decision-approval",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\" : {\r\n        \"season\" : { \"value\" : \"Fall\", \"type\" : \"string\" },\r\n        \"guestCount\" : { \"value\" : 8, \"type\" : \"integer\" }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/process-definition/key/dish-decision-process/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"process-definition",
+						"key",
+						"dish-decision-process",
+						"start"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
